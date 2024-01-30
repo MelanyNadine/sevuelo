@@ -28,6 +28,11 @@ public class Request implements Serializable {
 
     @NotNull
     @Size(max = 100)
+    @Column(name = "name", length = 100, nullable = false)
+    private String name;
+
+    @NotNull
+    @Size(max = 100)
     @Column(name = "destination", length = 100, nullable = false)
     private String destination;
 
@@ -35,6 +40,14 @@ public class Request implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private RequestStatus status;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Long getId() {
         return id;

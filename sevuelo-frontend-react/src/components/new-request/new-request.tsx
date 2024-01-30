@@ -10,6 +10,7 @@ import '../../App.css';
 export const NewRequest = () => {
 
   const defaultValues = {
+    name: '',
     passenger: '',
     destination: ''
   }
@@ -17,11 +18,11 @@ export const NewRequest = () => {
 
   const onSubmit = (data: any) => {
     const newRequest = defaultValue;
+    newRequest.name = data.passenger;
     newRequest.passenger = data.passenger;
     newRequest.destination = data.destination;
     createRequest(newRequest);
     reset();
-    window.location.href = "/requests"
   };
 
   return (

@@ -20,5 +20,10 @@ export const updateStatusReserve = (request: IRequest) => {
 
 export const createRequest = (request: IRequest) => {
   const requestUrl = `${apiUrl}/requests`;
-  return axios.post(requestUrl, request);
+  return axios.post(requestUrl, request).then((response:any)=>{
+    if(response.status==200){
+      window.location.href = "/requests"
+    }
+  });
 };
+
